@@ -14,10 +14,11 @@ export class HttpConfigInterceptor implements HttpInterceptor {
     request: HttpRequest<any>,
     next: HttpHandler
   ): Observable<HttpEvent<any>> {
-    if(request.url.indexOf("apicredentials") === -1){
+    if (request.url.indexOf("apicredentials") === -1) {
       request = request.clone({
-        headers: request.headers.set('Authorization', ""+sessionStorage.getItem("authorization") )
-      });
+        headers: request.headers.set('Authorization', "" + sessionStorage.getItem("authorization")).
+          set("Access-Control-Allow-Origin", "*").set("Access-Control-Allow-Headers", "*")
+      });
     }
 
     return next.handle(request).pipe(
