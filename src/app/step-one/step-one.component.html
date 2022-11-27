@@ -1,0 +1,103 @@
+<app-progress-bar></app-progress-bar>
+<div id="plan-step" class="ana-step planinfo-main desktop-space">
+    <div class="choose-planinfo-container">
+        <div class="step-1_1">
+            <div class="col step-m-title mb-5">{{'Please_Choose_From_The_Following' | translate}}</div>
+            <div class="steps-container">
+                <div class="radiobutton-container" (click)="changeChecked(1)" [ngClass]="checked == 1?'selected':''">
+                    <label class="radiobutton choose-new-number number-list-box radio-btn">
+                        <div class="col plan-title">
+                            <p label="choose-new-number" class="action">{{'Choose_your_favourite_number' | translate}}</p>
+                            <span>Proin sodales pulvinar sic tempor. Sociis natoque penatibus</span>
+                        </div>
+                        <span class="checkmark"></span>
+                    </label>
+                </div>
+                <div class="radiobutton-container" (click)="changeChecked(2)" [ngClass]="checked == 2?'selected':''">
+                    <label class="radiobutton upgrade-to-postpaid number-list-box radio-btn">
+                        <div class="col plan-title">
+                            <p label="upgrade-to-prepaid" class="action">{{'Use_your_existing_Ooredoo_number' | translate}}</p>
+                            <span>Proin sodales pulvinar sic tempor. Sociis natoque penatibus</span>
+                        </div>
+                        <span class="checkmark"></span>
+                    </label>
+                    <div class="user-mobilenumber">
+                        <div class="user_mobile_number_wrap">
+                            <div class="iti dial-code">
+                                <div class="flag-container">
+                                    <div class="selected-flag" role="combobox">
+                                        <div class="iti-kw"></div>
+                                        <div class="selected-dial-code">+965</div>
+                                    </div>
+                                </div><input type="text" name="user_mobile_number" value="" title="Mobile Number" placeholder="Mobile Number" class="form-control input-text intel_input" maxlength="8" autocomplete="new_password" style="padding-left: 96px;">
+                            </div>
+                            <div class="error field-error user-mobile-number-error d-none">{{'Enter_a_valid_mobile_number_to_continue' | translate}}</div>
+                        </div>
+                        <div class="outstanding-balance-wrapper d-none">
+                            <div class="outstanding-balance-note">
+                                <span></span>
+                            </div>
+                        </div>
+                        <div class="actions mt-5">
+                            <button type="button" title="Upgrade to Prepaid" class="action rounded-button red-bg-color white-text-color send-otp-to-verify">
+                                <span>{{'Upgrade_to_Prepaid' | translate}}</span>
+                            </button>
+                        </div>
+                        <div class="error field-error mt-3 usertype-error d-none"></div>
+                    </div>
+                </div>
+                <div class="radiobutton-container" (click)="changeChecked(3)" [ngClass]="checked == 3?'selected':''">
+                    <label class="radiobutton switch-to-oo$redColoroo number-list-box radio-btn">
+                        <div class="col plan-title">
+                            <p label="switch-to-oo$redColoroo" class="action">{{'Switch_to_Ooredoo' | translate}}</p>
+                            <span>Proin sodales pulvinar sic tempor. Sociis natoque penatibus</span>
+                        </div>
+                        <span class="checkmark"></span>
+                    </label>
+                    <div class="user-mobilenumber">
+                        <div class="user_mobile_number_wrap">
+                            <div class="iti dial-code">
+                                <div class="flag-container">
+                                    <div class="selected-flag">
+                                        <div class="iti-kw"></div>
+                                        <div class="selected-dial-code">+965</div>
+                                    </div>
+                                </div><input type="text" name="user_mobile_number" value="" title="Mobile Number" placeholder="Mobile Number" class="form-control input-text intel_input" maxlength="8" autocomplete="new_password" style="padding-left: 96px;">
+                            </div>
+                            <div class="error field-error user-mobile-number-error d-none">{{'Enter_a_valid_mobile_number_to_continue' | translate}}</div>
+                        </div>
+                        <div class="outstanding-balance-wrapper d-none">
+                            <div class="outstanding-balance-note">
+                                <span></span>
+                            </div>
+                        </div>
+                        <div class="actions mt-5">
+                            <button type="button" title="Upgrade to Prepaid" class="action rounded-button red-bg-color white-text-color send-otp-to-verify">
+                                <span>{{'Upgrade_to_Prepaid' | translate}}</span>
+                            </button>
+                        </div>
+                        <div class="error field-error mt-3 usertype-error d-none"></div>
+                    </div>
+                </div>
+            </div>
+            <div *ngIf="showError" class="error error-message step-selection-error-message">{{'Please_choose_one_of_the_above_option_to_continue' | translate}}</div>
+            <div class="actions">
+                <input type="hidden" class="user-type" value="">
+                <input type="hidden" class="onboarding-type" value="postpaid-simonly">
+                <input type="hidden" class="is-postpaid-user input-text" value="0">
+                <input type="hidden" class="outstanding-bill-amt input-text" value="0">
+                <input type="hidden" class="allow-renewal" value="">
+                <button [routerLink]="checked==1 ? ['/verify'] : []" type="button" title="Continue" [ngClass]="[checked == 1?'show':'hidden', checked == 0?'disable':'enable']" class="action rounded-button white-text-color step-selection-confirm  mt-3 red-bg-color" (click)="confirm()">
+                    <span>{{'Continue' | translate}}</span>
+                </button>
+            </div>
+        </div>
+    </div>
+    <div class="col step-title-prepaid" [ngClass]="prepaidSummaryOpen?'open-popup':''">
+        <div class="title" (click)="prepaidSummary()">
+            <span *ngIf="planTypeSummary == 'Prepaid'">{{'Your_Prepaid_Summary' | translate}}</span>
+            <span *ngIf="planTypeSummary == 'Postpaid'">{{'Your_Postpaid_Summary' | translate}}</span>
+        </div>
+        <app-prepaid-summary [planDetails]="planDetails" *ngIf="prepaidSummaryOpen"></app-prepaid-summary>
+    </div>
+</div>

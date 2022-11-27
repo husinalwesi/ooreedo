@@ -1,0 +1,126 @@
+.verify {
+    padding: 0 15px;
+    a {
+        text-decoration: none;
+    }
+    .step-title {
+        border: 0;
+        color: #221E20;
+        font: normal normal 600 24px/28px 'Rubik', sans-serif;
+        margin-bottom: 38px;
+        font-weight: bold;
+        font-size: 24px;
+    }
+    .nav-tabs {
+        background-color: #eeeeef;
+        border-radius: 5px;
+        padding: 5px;
+        .nav-link {
+            border-radius: 5px;
+            color: #000;
+            &:first-child {
+                 :not(.active) {}
+            }
+        }
+    }
+    .ccs-timer-box {
+        margin-top: 20px;
+    }
+    .verify-civilid,
+    .action-red {
+        width: 200px;
+        margin: auto;
+        height: 44px;
+        line-height: 21px;
+        background: #ed1c24 !important;
+        color: #ffffff !important;
+        padding: 10px 15px;
+        vertical-align: middle;
+        border: 1px solid #ed1c24;
+        border-radius: 20px;
+        display: flex;
+        justify-content: center;
+        font-weight: bold;
+    }
+    .verify-civilid-info .esim-block-title {
+        font: normal normal 600 17px/2px 'Rubik', sans-serif;
+        letter-spacing: 0.51px;
+        color: #221E20;
+        margin-top: 50px;
+        margin-bottom: 15px;
+        line-height: normal;
+    }
+    .esim-points {
+        list-style: none;
+        padding-left: 35px;
+    }
+    .verify-civilid-info ul.esim-points li {
+        position: relative;
+    }
+    .verify-civilid-info ul.esim-points li .list-number {
+        background: #ed1c24;
+        border-radius: 20px;
+        color: #ffffff;
+        font-size: 11px;
+        font-weight: bold;
+        position: absolute;
+        left: -34px;
+        top: 8px;
+        height: 20px;
+        width: 20px;
+        text-align: center;
+        line-height: 20px;
+    }
+    .verify-civilid-info .ebt-title {
+        color: #221E20;
+        font: normal normal 600 15px/34px 'Noto Sans', sans-serif;
+    }
+    .verify-civilid-info .ebt-subtitle {
+        color: #221E20;
+        font: normal normal normal 14px/24px 'Noto Sans', sans-serif;
+    }
+    .form-floating {
+        position: relative;
+        margin: 0 0 20px;
+    }
+    input {
+        border: 1px solid rgba(0, 0, 0, 0.12);
+        color: #000;
+        border-radius: 4px;
+        font: normal normal normal 16px/51px 'Noto Sans', sans-serif;
+        letter-spacing: .15px;
+        margin-bottom: 5px;
+        height: auto;
+        padding: 0 15px;
+        width: 100%;
+    }
+    select {
+        border: 1px solid rgba(0, 0, 0, 0.12);
+        color: #000;
+        border-radius: 4px;
+        font: normal normal normal 16px/51px 'Noto Sans', sans-serif;
+        letter-spacing: .15px;
+        margin-bottom: 5px;
+        height: auto;
+        padding: 0 15px;
+        width: 100%;
+    }
+    .switch-field {
+        display: flex;
+        flex-wrap: wrap;
+        margin-bottom: 20px;
+        label {
+            width: 50%;
+            display: flex;
+            flex-wrap: wrap;
+        }
+        input {
+            width: fit-content;
+            margin-right: 15px;
+            margin-bottom: 0;
+        }
+        input[type='radio'] {
+            accent-color: #ed1c24;
+        }
+    }
+}

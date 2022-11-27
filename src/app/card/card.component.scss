@@ -1,0 +1,129 @@
+.item {
+    box-shadow: 0px 1px 30px #ddd;
+    background: #FFFFFF;
+    border: 1px solid #E0E0E0;
+    border-radius: 10px;
+    padding: 15px 25px !important;
+    .imagepro {
+        width: 90px;
+        height: 90px;
+        margin: auto;
+        margin-top: 15px;
+        img {
+            width: 100%;
+        }
+    }
+    .prod-title {
+        font-weight: 600;
+        font-size: 16px;
+        color: #221E20;
+        margin-top: 10px;
+        margin-bottom: 35px;
+        font-weight: bold;
+        text-align: center;
+    }
+    .description {
+        .checkmark-list {
+            list-style-type: none;
+            padding-left: 20px;
+            [dir='rtl'] & {
+                padding-left: 0;
+                padding-right: 20px;
+            }
+            li {
+                font-size: 12px;
+                position: relative;
+                margin-bottom: 5px;
+                color: #726f70;
+                &::before {
+                    content: '';
+                    position: absolute;
+                    top: 2px;
+                    width: 8px;
+                    height: 12px;
+                    display: inline-block;
+                    transform: rotate(45deg);
+                    border-bottom: solid 2px #ED1C24;
+                    border-right: solid 2px #ED1C24;
+                    left: -20px;
+                }
+                &[dir='rtl'] {
+                    &::before {
+                        left: unset;
+                        right: -20px;
+                    }
+                }
+            }
+        }
+    }
+    .plan_details_div {
+        a {
+            z-index: 9;
+            position: relative;
+            pointer-events: all;
+            color: #ed1c24;
+            background-repeat: no-repeat;
+            display: inline-block;
+            padding-left: 20px;
+            background-position-y: 3px;
+            text-decoration: underline;
+            margin-top: 10px;
+            font-size: 13px;
+            background-image: url("../../assets/images/plan-details.svg");
+            &:hover {
+                cursor: pointer;
+            }
+        }
+    }
+    .static_price_div {
+        display: flex;
+        justify-content: space-between;
+        border-top: solid 1px #eee;
+        padding-top: 15px;
+        margin-top: 20px;
+        .free_delivery {
+            display: block;
+            font-size: 12px;
+            color: #666;
+            background-image: url("../../assets/images/free-del.svg");
+            background-repeat: no-repeat;
+            padding-left: 20px;
+        }
+        .free_sim_activation {
+            display: block;
+            font-size: 12px;
+            color: #666;
+            background-image: url("../../assets/images/free-activation.svg");
+            background-repeat: no-repeat;
+            padding-left: 20px;
+        }
+    }
+    .price-box {
+        .price {
+            display: block;
+            font-size: 21px;
+            font-weight: 600;
+            color: #ed1c24;
+        }
+        .months_label {
+            display: block;
+            font-size: 12px;
+            color: #949293;
+        }
+    }
+    .actions {
+        margin: 22px 0 0 0;
+        a {
+            padding: 6px 0 !important;
+            margin-bottom: 10px;
+            border: 1px solid #ed1c24;
+            border-radius: 26px;
+            color: #ed1c24;
+            font-size: 14px;
+            font-weight: 600;
+            width: 100%;
+            display: block;
+            text-align: center;
+        }
+    }
+}

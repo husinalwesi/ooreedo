@@ -1,0 +1,13 @@
+<div class="select-language">
+    <!--
+    <span>{{'selectLanguageText' | translate}}</span>
+    <select (change)="selectedLanguage()" [(ngModel)]="selectedlang" name="Select Language" id="selectLanguage">
+      <option *ngFor="let lang of supportLanguages" [ngValue]="lang">{{lang}}</option>
+    </select>
+    -->
+
+    <div (click)="selectedLanguage()">
+        <span *ngIf="selectedlang == 'en'">عربي</span>
+        <span *ngIf="selectedlang == 'ar'">English</span>
+    </div>
+</div>

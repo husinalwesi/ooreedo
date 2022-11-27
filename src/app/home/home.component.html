@@ -1,0 +1,14 @@
+<ng-container *ngIf="planslistCount == 1">
+    <div class="mx-4">
+        <app-card *ngFor="let product of products" [product]="product" (slideleft)="slideleft()" (cardIdchanged)="cardId = $event"></app-card>
+    </div>
+</ng-container>
+
+<ng-container *ngIf="planslistCount > 1">
+    <owl-carousel-o [options]="customOptions">
+        <ng-template carouselSlide *ngFor="let product of products">
+            <app-card [product]="product" (slideleft)="slideleft()" (cardIdchanged)="cardId = $event"></app-card>
+        </ng-template>
+    </owl-carousel-o>
+</ng-container>
+<app-plan-details [products]="products" [initialWidth]="initialWidth" [cardId]="cardId" (initialWidthP)="initialWidth = $event"></app-plan-details>

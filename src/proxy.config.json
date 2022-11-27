@@ -1,0 +1,10 @@
+{
+    "/ooredoo_API": {
+        "target": "https://shopqa.ooredoo.com.kw",
+        "secure": false,
+        "pathRewrite": {
+            "^/ooredoo_API": ""
+        },
+        "changeOrigin": true
+    }
+}

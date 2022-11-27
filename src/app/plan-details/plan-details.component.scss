@@ -1,0 +1,85 @@
+.side_description {
+    box-shadow: -8px 0px 7px #dddddd;
+    background: #fff !important;
+    position: fixed !important;
+    overflow-y: scroll !important;
+    transform: translateX(0px);
+    right: 0px;
+    left: auto;
+    top: 0px;
+    height: 100%;
+    overflow: hidden;
+    -webkit-transition: width 0.5s ease-in-out;
+    -moz-transition: width 0.5s ease-in-out;
+    -o-transition: width 0.5s ease-in-out;
+    transition: width 0.5s ease-in-out;
+    margin: 0px;
+    padding: 0px;
+    border: 0px;
+    vertical-align: baseline;
+    outline: none;
+    background-color: rgb(221, 221, 221);
+    z-index: 1000 !important;
+    align-self: auto !important;
+    position: relative;
+    .close_sidedesc {
+        position: absolute;
+        background-repeat: no-repeat;
+        width: 21px;
+        height: 21px;
+        font-size: 0;
+        background-image: url("../../assets/images/close.svg");
+        left: 34px;
+        top: 15px;
+    }
+    .side_desc_content {
+        padding: 35px;
+        padding-top: 60px;
+        .product_description {
+            ul {
+                padding-bottom: 12px;
+                li {
+                    margin-bottom: 5px;
+                }
+            }
+        }
+        .product_price {
+            text-align: right;
+            padding-top: 20px;
+            span {
+                display: block;
+                span {
+                    display: block;
+                    .price {
+                        display: block;
+                        color: #ed1c24;
+                        font-size: 21px;
+                        font-weight: 600;
+                        line-height: 22px;
+                    }
+                    .months_label {
+                        font-size: 12px;
+                        color: #221E20;
+                    }
+                }
+            }
+        }
+    }
+    .select_plan {
+        padding-bottom: 20px;
+        padding-top: 20px;
+        text-align: center;
+        a {
+            background: #ed1c24;
+            border: none;
+            border-radius: 30px;
+            width: 210px;
+            font-size: 14px;
+            padding: 10px 0;
+            color: #fff;
+            display: inline-block;
+            font-weight: bold;
+            text-decoration: none;
+        }
+    }
+}

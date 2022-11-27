@@ -1,0 +1,83 @@
+<div class="plan-summary-sidebar">
+    <div class="plan-summary-container">
+        <div class="plan-details-wrapper row row-cols-1 row-cols-lg-2 mb-4 white-box">
+            <div class="plan-name-container col col-12 mb-3">
+                <span class="plan-name">{{planDetails.name}}</span>
+                <!--span class="edit-icon"><a href="https://shopqa.oo$redColoroo.com.kw/eshop.html">Edit</a></span-->
+            </div>
+            <div class="plan-info-container col col-12">
+                <div class="row row-cols-1 row-cols-lg-2" *ngFor="let item of planDetails.specification">
+                    <div class="col col-7">
+                        <div class="plan-info-title">{{item.label}}</div>
+                    </div>
+                    <div class="col col-5" style="display: flex;justify-content: flex-end;">
+                        <span class="plan-info-data">{{item.value}}</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="mb-2 white-box">
+            <div class="plan-summary-wrapper row row-cols-1 row-cols-lg-2">
+                <div class="confirmed-number-container col col-12 d-none">
+                    <div class="row row-cols-1 row-cols-lg-2 mb-4">
+                        <div class="col col-7">
+                            <span class="confirmed-number-details"></span>
+                            <!--span class="edit-icon"><a href="javascript:void(0);">Edit</a></span-->
+                        </div>
+                        <div class="col col-5 text-align-right">
+                            <span class="confirmed-number-data"></span>
+                        </div>
+                    </div>
+                </div>
+                <div class="plan-info-container col col-12">
+                    <div class="row row-cols-1 row-cols-lg-2">
+                        <div class="col col-7">
+                            <div class="plan-info-title">{{'Power_Plan' | translate}}</div>
+                        </div>
+                        <div class="col col-5" style="display: flex;justify-content: flex-end;">
+                            <span class="plan-info-data plan-monthly-price">KD {{planDetails.final_price}}</span>
+                        </div>
+                    </div>
+                    <div class="row row-cols-1 row-cols-lg-2 d-none">
+                        <div class="col col-7">
+                            <div class="plan-info-title">{{'Activation_Fee' | translate}}</div>
+                        </div>
+                        <div class="col col-5" style="display: flex;justify-content: flex-end;">
+                            <span class="plan-info-data">KD 0</span>
+                        </div>
+                    </div>
+                    <div class="dashed-border"></div>
+                    <div *ngIf="" class="row row-cols-1 row-cols-lg-2">
+                        <div class="col col-7">
+                            <div class="plan-info-title pit-2">{{'Due_Monthly' | translate}}</div>
+                        </div>
+                        <div class="col col-5" style="display: flex;justify-content: flex-end;">
+                            <span class="plan-info-data plan-upfront-price">KD {{planDetails.final_price}}</span>
+                        </div>
+                    </div>
+                    <div class="row row-cols-1 row-cols-lg-2">
+                        <div class="col col-7">
+                            <div class="plan-info-title pit-2">{{'Due_Today' | translate}}</div>
+                        </div>
+                        <div class="col col-5" style="display: flex;justify-content: flex-end;">
+                            <span class="plan-info-data plan-upfront-price">KD {{planDetails.due_today}}</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="plan-total-wrapper row row-cols-1 row-cols-lg-2">
+            <div class="plan-info-container col col-12">
+                <div class="dashed-border"></div>
+                <div class="row row-cols-1 row-cols-lg-2">
+                    <div class="col col-7">
+                        <div class="plan-info-title pit-total">{{'Total' | translate}}</div>
+                    </div>
+                    <div class="col col-5" style="display: flex;justify-content: flex-end;">
+                        <span class="plan-info-data final-price">KD 0</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

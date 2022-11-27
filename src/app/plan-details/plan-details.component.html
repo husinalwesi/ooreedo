@@ -1,0 +1,26 @@
+<div class="side_description" style="width: 0;" [ngStyle]="{'width':initialWidth+'%'}">
+    <div class="close_sidedesc" (click)="resetWidth()">X</div>
+    <div class="side_desc_content">
+        <div class="product_description">
+            <ul class="checkmark-list">
+                <li>{{dataProduct.ooredoo_minutes}}</li>
+                <li>{{dataProduct.local_minutes}}</li>
+                <li>{{dataProduct.internet_data}}</li>
+                <li>{{dataProduct.social_media_minutes}}</li>
+            </ul>
+        </div>
+        <div class="product_price">
+            <span class="price-container price-final_price tax weee">
+              <span id="product-price-5398" data-price-amount="25" data-price-type="finalPrice" class="price-wrapper ">
+                  <span class="price">KD {{dataProduct.price}}</span>
+            <span class="months_label">/{{'Month' | translate}}</span> </span>
+            </span>
+
+        </div>
+        <div class="select_plan">
+            <a (click)="selectPlan(dataProduct.product_id, dataProduct.line_type)" routerLink="/step1" class="action tocart primary" title="Select This Plan">
+                <span>{{'Select_This_Plan' | translate}}</span>
+            </a>
+        </div>
+    </div>
+</div>

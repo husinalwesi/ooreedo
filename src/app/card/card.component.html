@@ -1,0 +1,35 @@
+<div class="item product product-item">
+    <div class="imagepro">
+        <img [src]="product.image!=''?product.image :'../../assets/images/thumbnail_image001_1.jpg'" width="90" height="90">
+    </div>
+    <div class="prod-title">
+        {{product.name}}
+    </div>
+    <div class="product description product-item-description">
+        <ul class="checkmark-list" [dir]="dir">
+            <li [dir]="dir">{{product.ooredoo_minutes}}</li>
+            <li [dir]="dir">{{product.local_minutes}}</li>
+            <li [dir]="dir">{{product.internet_data}}</li>
+            <li [dir]="dir">{{product.social_media_minutes}}</li>
+        </ul>
+    </div>
+    <div class="plan_details_div">
+        <a (click)="slideleftchild()" class="plan_details_link">{{'See_Plan_Details' | translate}}</a>
+    </div>
+    <div class="static_price_div">
+        <div class="free_delivery_free_sim">
+            <span class="free_delivery">{{'Free_Delivery' | translate}}</span>
+            <span class="free_sim_activation">{{'Free_SIM_Activation' | translate}}</span>
+        </div>
+        <div class="price-box price-final_price" data-role="priceBox" data-product-id="5412" data-price-box="product-id-5412">
+            <span class="price-container price-final_price tax weee">
+            <span id="product-price-5412" data-price-amount="5" data-price-type="finalPrice" class="price-wrapper ">
+            <span class="price">KD {{product.price}}</span>
+            <span class="months_label">/{{'Month' | translate}}</span> </span>
+            </span>
+        </div>
+    </div>
+    <div class="actions">
+        <a (click)="selectPlan(product.product_id, product.line_type)" routerLink="/step1"><span>{{'Choose_This_Plan' | translate}}</span></a>
+    </div>
+</div>
