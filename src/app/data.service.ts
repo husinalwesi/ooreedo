@@ -16,7 +16,7 @@ export class DataService {
   constructor(private _HttpClient:HttpClient) { }
 
   postCredentials() {
-    return this._HttpClient.post<any>(`${environment.baseUrl}/ooredooapi/api/apicredentials`,{}).toPromise();
+    return this._HttpClient.post(`${environment.baseUrl}/ooredooapi/api/apicredentials`, null).toPromise();
   }
 
   async getData() {
@@ -27,7 +27,7 @@ export class DataService {
 
 
   async getPlanslist(lang: any) {
-      return this._HttpClient.get<any>(`${environment.baseUrl}/ooredooapi/api/planslist`, {}).toPromise();
+      return this._HttpClient.get(`${environment.baseUrl}/ooredooapi/api/planslist`, {}).toPromise();
 
       // return this._HttpClient.get(`${environment.baseUrl}/ooredooapi/api/planslist`, {params: {
       //   lang: lang,
