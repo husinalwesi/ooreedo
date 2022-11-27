@@ -33,25 +33,20 @@ export class HomeComponent implements OnInit, OnDestroy {
 
 
 
-    // WARNING: For GET requests, body is set to null by browsers.
 
-    var xhr = new XMLHttpRequest();
-    xhr.withCredentials = true;
+    var myHeaders = new Headers();
+    myHeaders.append("Authorization", "" + sessionStorage.getItem("authorization"));
 
-    xhr.addEventListener("readystatechange", function () {
-      if (this.readyState === 4) {
-        console.log(this.responseText);
-      }
-    });
+    var requestOptions: any = {
+      method: 'GET',
+      headers: myHeaders,
+      redirect: 'follow'
+    };
 
-    xhr.open("GET", "https://shopqa.ooredoo.com.kw/ooredooapi/api/planslist");
-    xhr.setRequestHeader("Authorization", "" + sessionStorage.getItem("authorization"));
-    // WARNING: Cookies will be stripped away by the browser before sending the request.
-    // xhr.setRequestHeader("Cookie", "PHPSESSID=p9u9lgii7kghu6thvhr94nk5mh; X-Magento-Vary=390b04208302491908e37d8d6481f4fdc708c282; mage-messages=%5B%7B%22type%22%3A%22error%22%2C%22text%22%3A%22Invalid%20Form%20Key.%20Please%20refresh%20the%20page.%22%7D%5D; private_content_version=7dbe5c3d7df31002dcf7d82140180d41");
-
-    xhr.send();
-
-
+    fetch("https://shopqa.ooredoo.com.kw/ooredooapi/api/planslist", requestOptions)
+      .then(response => response.text())
+      .then(result => console.log(result))
+      .catch(error => console.log('error', error));
 
     // setTimeout(async () => {
     //   //let params = new HttpParams().set("plan_type",this._DataService.planType).set("lang", this._TranslationService.apiLang());
