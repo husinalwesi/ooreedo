@@ -33,7 +33,7 @@ export class HomeComponent implements OnInit, OnDestroy {
     setTimeout(async () => {
       //let params = new HttpParams().set("plan_type",this._DataService.planType).set("lang", this._TranslationService.apiLang());
       let planlist: any = await this._DataService.getPlanslist(this._TranslationService.apiLang());
-      console.log(planlist.data)
+      // console.log(planlist.data)
       this.planslist = planlist.data;
       this.planslistCount = this.planslist['product_data'].product_count;
       this.products = this.planslist['product_data'].products;

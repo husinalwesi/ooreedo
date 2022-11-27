@@ -27,10 +27,13 @@ export class DataService {
 
 
   async getPlanslist(lang: any) {
-      return this._HttpClient.get(`${environment.baseUrl}/ooredooapi/api/planslist`, {params: {
-        lang: lang,
-        plan_type: this.planType
-      }}).toPromise();
+      return this._HttpClient.get(`${environment.baseUrl}/ooredooapi/api/planslist`, {}).toPromise();
+
+      // return this._HttpClient.get(`${environment.baseUrl}/ooredooapi/api/planslist`, {params: {
+      //   lang: lang,
+      //   plan_type: this.planType
+      // }}).toPromise();
+
   }
 
   getPlandetail(params: any): Observable<any> {

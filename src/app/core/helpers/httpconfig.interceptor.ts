@@ -17,9 +17,6 @@ export class HttpConfigInterceptor implements HttpInterceptor {
     if(request.url.indexOf("apicredentials") === -1){
       request = request.clone({
         headers: request.headers.set('Authorization', ""+sessionStorage.getItem("authorization") )
-        .set('Accept','*/*')
-        .set('Access-Control-Allow-Origin', '*')
-        .set('Content-Type', 'application/json'),
       });
     }
 
